@@ -13,9 +13,10 @@ history = []
 
 while True:
     if not args:
-        search_query_org = input("Search Query: ")
+    	search_query_org = input("Search Query: ")
     else:
-        search_query_org = args
+    	search_query_org = args
+    	args = None
     search_query = search_query_org.strip("ao")
 
     if search_query == "history":
