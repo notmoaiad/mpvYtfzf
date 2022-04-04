@@ -20,13 +20,13 @@ while True:
     search_query = search_query_org.strip("ao")
 
     if search_query == "history":
-        out = subprocess.check_output(['ytfzf', '-t', '-I', 'R', '-q'])
+        out = subprocess.check_output(['ytfzf', '-I', 'R', '-q'])
     elif not search_query:
         if not history:
             continue
-        out = subprocess.check_output(['ytfzf', '-t', '-I', 'R', history[len(history)-1]])
+        out = subprocess.check_output(['ytfzf', '-I', 'R', history[len(history)-1]])
     else: 
-        out = subprocess.check_output(['ytfzf', '-t', '-I', 'R', search_query])
+        out = subprocess.check_output(['ytfzf', '-I', 'R', search_query])
         history.append(search_query)
 
     out = out.decode('utf-8')
